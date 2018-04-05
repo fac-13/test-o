@@ -53,28 +53,46 @@ const locationHandler = (req, res) => {
   log(req);
   const { url } = req;
   const { keyword } = qs.parse(url);
-  var locations = new googleLocations(process.env.GOOGLE_API_KEY);
   const options = { 
     input: keyword,
     location: '51.515419,-0.141099',
-    radius: '1000',
+    types: 'establishment',
+    radius: '100',
   };
-
+  const locations = new googleLocations(process.env.GOOGLE_API_KEY);
   locations.autocomplete(options, function (err, response) {
-    if (err) return console.log(err);
-    const { predictions } = response;
-    // console.log(predictions);
-    const result = predictions;
-    res200(res, JSON.stringify(result), 'application/json');
-
-    // locations.details({ placeid: response.predictions[0].place_id }, function (err, response) {
-    //   var locationObj = response.result.geometry.location;
-    //   console.log(locationObj);
-
-    // });
-
+    if (err) {
+      res.writeHead(500, {'content-type': 'text/plain'})
+      res.end(err)
+    } else {
+      const { predictions } = response;
+      const result = predictions.map((place) => {
+        const { description, place_id } = place;
+        return { description, place_id };
+      });
+      log(result);
+      res200(res, JSON.stringify(result), 'application/json');
+    }
   });
-}
+};
+
+const chooseLocationHandler = (req, res) => {
+  const { url } = req;
+  const locations = new googleLocations(process.env.GOOGLE_API_KEY);
+  // const { placeid } = qs.parse(url);
+  const placeid = "ChIJnX2njGIPdkgRJSUCk-BqQsk";
+  const options = { placeid: placeid };
+  locations.details(options, function (err, response) {
+    if (err) {
+      log(err)
+    } else {
+      const { result: { geometry: { location: latlong }}} = response;
+      console.log(latlong);
+
+    }
+
+    });
+};
 
 const addReviewHandler = (req, res) => {
   log(req);
@@ -84,5 +102,6 @@ module.exports = {
   staticHandler,
   spaceHandler,
   locationHandler,
+  chooseLocationHandler,
   addReviewHandler,
 };

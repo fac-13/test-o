@@ -1,4 +1,4 @@
-const { staticHandler, spaceHandler, locationHandler, addReviewHandler } = require('./handler');
+const { staticHandler, spaceHandler, locationHandler, addReviewHandler, chooseLocationHandler } = require('./handler');
 const { log } = console;
 
 const router = (request, response) => { 
@@ -8,6 +8,8 @@ const router = (request, response) => {
       spaceHandler(request, response);
     } else if (url.includes('search-location')) {
       locationHandler(request, response);
+    } else if (url.includes('choose-location')) {
+      chooseLocationHandler(request, response);
     } else {
       staticHandler(request, response);
     }
