@@ -14,5 +14,13 @@ function fetch(method, url, callback) {
     xhr.send();
 }
 
-const search = document.getElementById('search-location')
+const searchLocation = document.getElementById('search-location');
+const searchText = document.getElementById('search-text');
 
+searchLocation.addEventListener('click', function (e) {
+    var input = searchText.value;
+    console.log(input);
+    fetch('GET', 'search-location&keyword=' + input, function(response) {
+    console.log(response);       
+    });
+});
