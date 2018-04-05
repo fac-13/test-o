@@ -3,7 +3,7 @@ BEGIN;
 DROP TABLE IF EXISTS spaces, reviews CASCADE;
 
 CREATE TABLE spaces (
-    id SERIAL PRIMARY KEY NOT NULL,
+    id PRIMARY KEY NOT NULL,
     name VARCHAR(255) NOT NULL,
     latitude DECIMAL(10,8) NOT NULL,
     longitude DECIMAL(10,8) NOT NULL
@@ -15,6 +15,6 @@ CREATE TABLE reviews (
     spacesid int FOREIGN KEY REFERENCES spaces(id)
 );
 
-INSERT INTO spaces (name, latitude, longitude) VALUES ();
+-- INSERT INTO spaces (id, name, latitude, longitude) VALUES ();
 
 COMMIT;
