@@ -12,15 +12,20 @@
 
   <form class="form" action="/add-workshop" method="post">
     <input type="text" name="name" value="" placeholder="name">
+    <button id="search-location" type="button" name="search"></button>
     <!-- <input type="postcode" name="postcode" value="" placeholder="postcode">
     <input type="number" name="number" value="" placeholder="number"> -->
     <!-- <textarea name="review" value="" placeholder="add your review"> -->
+    <input id="placeid" type="hidden" name="placeid" value="">
+    <input id="longitude" type="hidden" name="longitude" value="">
+    <input id="latitude" type="hidden" name="latitude" value="">
+    
     <select name="ratings">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
     </select>
     <button type="submit" name="button">Add</button>
   </form>
