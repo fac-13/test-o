@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Add a new workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="public/form.css">
+</head>
+
+<body>
+
+  <form class="form" action="/add-workshop" method="post">
+    <input type="text" name="name" value="" placeholder="name">
+    <!-- <input type="postcode" name="postcode" value="" placeholder="postcode">
+    <input type="number" name="number" value="" placeholder="number"> -->
+    <!-- <textarea name="review" value="" placeholder="add your review"> -->
+    <select name="ratings">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <button type="submit" name="button">Add</button>
+  </form>
+
+  <script type="text/javascript" src="public/form.js"></script>
+</body>
+
+</html>
