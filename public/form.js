@@ -14,3 +14,4 @@ function fetch(method, url, callback) {
     xhr.send();
 }
 
+const search = document.getElementById('search-location')
