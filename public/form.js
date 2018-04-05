@@ -15,3 +15,4 @@ function fetch(method, url, callback) {
 }
 
 const search = document.getElementById('search-location')
+
