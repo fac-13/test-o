@@ -11,10 +11,10 @@ CREATE TABLE spaces (
 );
 
 CREATE TABLE reviews (
-             id SERIAL PRIMARY KEY NOT NULL,
-             rating INT NOT NULL,
-             spacesid VARCHAR(100) REFERENCES spaces(id)
-         );
+    id SERIAL PRIMARY KEY NOT NULL,
+    rating INT NOT NULL,
+    spacesid VARCHAR(100) REFERENCES spaces(id)
+);
 
 -- INSERT INTO spaces (id, name, latitude, longitude) VALUES ();
 

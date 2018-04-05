@@ -4,7 +4,7 @@
   "description": "A coding workspace search app",
   "main": "index.js",
   "scripts": {
-    "test": "nyc tape ./src/tests/*.js | tap-spec",
+    "test": "nyc tape ./tests/*.js | tap-spec",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "test-handler": "nodemon ./src/tests/handler.test.js | tap-spec"
