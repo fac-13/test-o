@@ -6,8 +6,8 @@ CREATE TABLE spaces
 (
     id VARCHAR(100) NOT NULL,
     name VARCHAR(255) NOT NULL,
-    latitude DECIMAL(10,8) NOT NULL,
-    longitude DECIMAL(10,8) NOT NULL,
+    latitude DECIMAL(10,7) NOT NULL,
+    longitude DECIMAL(10,7) NOT NULL,
     PRIMARY KEY (id)
 );
 CREATE TABLE reviews
