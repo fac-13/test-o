@@ -13,24 +13,24 @@ tape("getData", t => {
     t.error(err, "No Error"); //Assert that db_build finished successfully with no errors
 
     let expected = [
-      {
-        id: "ChIJnX2njGIPdkgRJSUCk-BqQsk",
-        name: "Chit Chaat Chai",
-        latitude: 51.4600145,
-        longitude: -0.1890872
-      },
-      {
-        id: "ChIJrXOlLNYadkgRiohqRNt8BSY",
-        name: "Oriental Dragon",
-        latitude: 51.5154956,
-        longitude: -0.1493805
-      },
-      {
-        id: "ChIJ-TGDfdQdkgRIZht1FeEQeg",
-        name: "WorkSpace Design",
-        latitude: 51.5175847,
-        longitude: -0.146326
-      }
+          {
+        "id":"ChIJnX2njGIPdkgRJSUCk-BqQsk",
+        "name":"Chit Chaat Chai",
+        "latitude": 51.4600145,
+        "longitude": -0.1890872
+          },
+          {
+        "id":"ChIJrXOlLNYadkgRiohqRNt8BSY",
+        "name":"Oriental Dragon",
+        "latitude": 51.5154956,
+        "longitude": -0.1493805
+          },
+          {
+        "id":"ChIJ-TGDfdQdkgRIZht1FeEQeg",
+        "name":"WorkSpace Design",
+        "latitude": 51.5175847,
+        "longitude": -0.146326
+          }
     ];
 
     getData((err, result) => {

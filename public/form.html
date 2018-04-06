@@ -5,27 +5,34 @@
   <meta charset="utf-8">
   <title>Add a new workspace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="public/form.css">
+  <link rel="stylesheet" href="./form.css">
 </head>
 
 <body>
 
   <form class="form" action="/add-workshop" method="post">
-    <input type="text" name="name" value="" placeholder="name">
+    <input id="search-text" type="text" name="name" value="" placeholder="name">
+    <button id="search-location" type="button" name="search">Search</button>
     <!-- <input type="postcode" name="postcode" value="" placeholder="postcode">
     <input type="number" name="number" value="" placeholder="number"> -->
     <!-- <textarea name="review" value="" placeholder="add your review"> -->
+    <input id="placeid" type="hidden" name="placeid" value="">
+    <input id="longitude" type="hidden" name="longitude" value="">
+    <input id="latitude" type="hidden" name="latitude" value="">
+
     <select name="ratings">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
     </select>
     <button type="submit" name="button">Add</button>
   </form>
-
-  <script type="text/javascript" src="public/form.js"></script>
+  <div class="result-container">
+    <ul id="result-list"></ul>
+  </div>
+  <script type="text/javascript" src="./form.js"></script>
 </body>
 
 </html>
