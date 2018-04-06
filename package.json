@@ -4,12 +4,13 @@
   "description": "A coding workspace search app",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test nyc tape ./tests/*.js | tap-spec",
+    "test": "NODE_ENV=heroku nyc tape ./tests/*.js | tap-spec",
+    "test-local": "NODE_ENV=test nyc tape ./tests/*.js | tap-spec",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "test-handler":
-      "NODE_ENV=test nodemon ./src/tests/handler.test.js | tap-spec",
-    "build-db": "node ./src/database/db_build.js"
+    "test-handler": "NODE_ENV=test nodemon ./src/tests/handler.test.js | tap-spec",
+    "build-db": "node ./src/database/db_build.js",
+    "deploy-db": "NODE_ENV=heroku node ./src/database/db_build.js"
   },
   "repository": {
     "type": "git",
