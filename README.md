@@ -17,3 +17,9 @@ We started by initiating a technical spike to see what APIs were available for u
 
 #### Google-locations npm & Google Places API 
 The Google-locations package allows users to use the basic functions of Google Places such as search, autocomplete, and details. The package also provides geocoding and reverse geocoding capabilities with the Google Geocoding API.
+
+### System Architecture:
+
+### Endpoints
+
+### Site Functionality
