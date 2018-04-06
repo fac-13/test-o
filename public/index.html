@@ -10,12 +10,18 @@
 
 <body>
 
-    <form class="form" action="/search" method="GET"></form>
-    <input type="text" name="workspace" value="" placeholder="workspace">
-    <button type="submit" name="button">Search</button>
-    </form>
+    <nav class="nav__bar">
+    <button name="button" class="nav__button"><a href="public/form.html">Add a review</a></button>
+    </nav>
 
-    <section class="results-container">
+    <header class="header">
+    <form class="form" action="/search" method="GET"></form>
+    <input  class="form__input" type="text" name="workspace" value="" placeholder="workspace">
+    <button type="submit" name="button" class="form__submit-button">Search</button>
+    </form>
+    </header>
+
+    <section class="section__results">
 
     </section>
     <script type="text/javascript" src="public/index.js"></script>
